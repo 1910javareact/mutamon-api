@@ -20,94 +20,20 @@ public class Mutation {
 	private String name;
 	
 	@Column(name = "mutation_level")
-	private String level;
+	private int level;
 	
 	@Column(name = "mutation_speed")
-	private String speed;
+	private int speed;
 	
 	@Column(name = "mutation_strength")
-	private String strength;
+	private int strength;
 	
 	@Column(name = "mutation_defence")
-	private String defence;
+	private int defence;
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((defence == null) ? 0 : defence.hashCode());
-		result = prime * result + ((level == null) ? 0 : level.hashCode());
-		result = prime * result + mutationId;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((speed == null) ? 0 : speed.hashCode());
-		result = prime * result + ((strength == null) ? 0 : strength.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof Mutation)) {
-			return false;
-		}
-		Mutation other = (Mutation) obj;
-		if (defence == null) {
-			if (other.defence != null) {
-				return false;
-			}
-		} else if (!defence.equals(other.defence)) {
-			return false;
-		}
-		if (level == null) {
-			if (other.level != null) {
-				return false;
-			}
-		} else if (!level.equals(other.level)) {
-			return false;
-		}
-		if (mutationId != other.mutationId) {
-			return false;
-		}
-		if (name == null) {
-			if (other.name != null) {
-				return false;
-			}
-		} else if (!name.equals(other.name)) {
-			return false;
-		}
-		if (speed == null) {
-			if (other.speed != null) {
-				return false;
-			}
-		} else if (!speed.equals(other.speed)) {
-			return false;
-		}
-		if (strength == null) {
-			if (other.strength != null) {
-				return false;
-			}
-		} else if (!strength.equals(other.strength)) {
-			return false;
-		}
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Mutation [mutationId=" + mutationId + ", name=" + name + ", level=" + level + ", speed=" + speed
-				+ ", strength=" + strength + ", defence=" + defence + "]";
-	}
-
-	public Mutation(int mutationId, String name, String level, String speed, String strength, String defence) {
+	public Mutation() {
 		super();
-		this.mutationId = mutationId;
-		this.name = name;
-		this.level = level;
-		this.speed = speed;
-		this.strength = strength;
-		this.defence = defence;
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getMutationId() {
@@ -126,40 +52,93 @@ public class Mutation {
 		this.name = name;
 	}
 
-	public String getLevel() {
+	public int getLevel() {
 		return level;
 	}
 
-	public void setLevel(String level) {
+	public void setLevel(int level) {
 		this.level = level;
 	}
 
-	public String getSpeed() {
+	public int getSpeed() {
 		return speed;
 	}
 
-	public void setSpeed(String speed) {
+	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
 
-	public String getStrength() {
+	public int getStrength() {
 		return strength;
 	}
 
-	public void setStrength(String strength) {
+	public void setStrength(int strength) {
 		this.strength = strength;
 	}
 
-	public String getDefence() {
+	public int getDefence() {
 		return defence;
 	}
 
-	public void setDefence(String defence) {
+	public void setDefence(int defence) {
 		this.defence = defence;
 	}
 
-	public Mutation() {
+	public Mutation(int mutationId, String name, int level, int speed, int strength, int defence) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.mutationId = mutationId;
+		this.name = name;
+		this.level = level;
+		this.speed = speed;
+		this.strength = strength;
+		this.defence = defence;
 	}
+
+	@Override
+	public String toString() {
+		return "Mutation [mutationId=" + mutationId + ", name=" + name + ", level=" + level + ", speed=" + speed
+				+ ", strength=" + strength + ", defence=" + defence + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + defence;
+		result = prime * result + level;
+		result = prime * result + mutationId;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + speed;
+		result = prime * result + strength;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Mutation other = (Mutation) obj;
+		if (defence != other.defence)
+			return false;
+		if (level != other.level)
+			return false;
+		if (mutationId != other.mutationId)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (speed != other.speed)
+			return false;
+		if (strength != other.strength)
+			return false;
+		return true;
+	}
+
+	
 }
