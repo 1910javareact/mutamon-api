@@ -24,16 +24,16 @@ public class Monster {
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id", referencedColumnName = "user_id")
-	private int userId;
+	private User userId;
 	
 	@Column(name = "monster_level")
-	private int level;
+	private String level;
 	
 	@Column(name = "monster_name")
 	private String name;
 	
 	@Column(name = "monster_wins")
-	private int wins;
+	private String wins;
 	
 	@Column(name = "is_current_monster")
 	private boolean isCurrent;
@@ -57,19 +57,19 @@ public class Monster {
 		this.monsterId = monsterId;
 	}
 
-	public int getUserId() {
+	public User getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(User userId) {
 		this.userId = userId;
 	}
 
-	public int getLevel() {
+	public String getLevel() {
 		return level;
 	}
 
-	public void setLevel(int level) {
+	public void setLevel(String level) {
 		this.level = level;
 	}
 
@@ -81,11 +81,11 @@ public class Monster {
 		this.name = name;
 	}
 
-	public int getWins() {
+	public String getWins() {
 		return wins;
 	}
 
-	public void setWins(int wins) {
+	public void setWins(String wins) {
 		this.wins = wins;
 	}
 
@@ -105,7 +105,7 @@ public class Monster {
 		this.mutations = mutations;
 	}
 
-	public Monster(int monsterId, int userId, int level, String name, int wins, boolean isCurrent,
+	public Monster(int monsterId, User userId, String level, String name, String wins, boolean isCurrent,
 			Set<Mutation> mutations) {
 		super();
 		this.monsterId = monsterId;
@@ -128,46 +128,67 @@ public class Monster {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + (isCurrent ? 1231 : 1237);
-		result = prime * result + level;
+		result = prime * result + ((level == null) ? 0 : level.hashCode());
 		result = prime * result + monsterId;
 		result = prime * result + ((mutations == null) ? 0 : mutations.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + userId;
-		result = prime * result + wins;
+		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
+		result = prime * result + ((wins == null) ? 0 : wins.hashCode());
 		return result;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (!(obj instanceof Monster)) {
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
+		}
 		Monster other = (Monster) obj;
-		if (isCurrent != other.isCurrent)
+		if (isCurrent != other.isCurrent) {
 			return false;
-		if (level != other.level)
+		}
+		if (level == null) {
+			if (other.level != null) {
+				return false;
+			}
+		} else if (!level.equals(other.level)) {
 			return false;
-		if (monsterId != other.monsterId)
+		}
+		if (monsterId != other.monsterId) {
 			return false;
+		}
 		if (mutations == null) {
-			if (other.mutations != null)
+			if (other.mutations != null) {
 				return false;
-		} else if (!mutations.equals(other.mutations))
+			}
+		} else if (!mutations.equals(other.mutations)) {
 			return false;
+		}
 		if (name == null) {
-			if (other.name != null)
+			if (other.name != null) {
 				return false;
-		} else if (!name.equals(other.name))
+			}
+		} else if (!name.equals(other.name)) {
 			return false;
-		if (userId != other.userId)
+		}
+		if (userId == null) {
+			if (other.userId != null) {
+				return false;
+			}
+		} else if (!userId.equals(other.userId)) {
 			return false;
-		if (wins != other.wins)
+		}
+		if (wins == null) {
+			if (other.wins != null) {
+				return false;
+			}
+		} else if (!wins.equals(other.wins)) {
 			return false;
+		}
 		return true;
 	}
-
+	
 	
 }
