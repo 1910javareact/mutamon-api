@@ -51,8 +51,8 @@ public class MutamonServiceImpl implements MutamonService {
 	}
 
 	@Override
-	public Monster findMonsterByUserIdAndIsCurrent(int id, boolean isCurrent) {
-		Monster monster = md.findMonsterByUserIdAndIsCurrent(id, isCurrent);
+	public Monster findMonsterByUserId(int id) {
+		Monster monster = md.findMonsterByUserId(id);
 		monster = this.mutamonStatsPopulation(monster);
 		return monster;
 	}

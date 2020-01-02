@@ -33,8 +33,8 @@ public class MutamonController {
 	}
 	
 	@GetMapping("/{id}")
-	public Monster findMonsterByUserIdAndIsCurrent(@PathVariable int id) {
-		return ms.findMonsterByUserIdAndIsCurrent(id, true);
+	public Monster findMonsterByUserId(@PathVariable int id) {
+		return ms.findMonsterByUserId(id);
 	}
 
 }
