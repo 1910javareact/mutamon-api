@@ -1,0 +1,15 @@
+package com.revature.services;
+
+import java.util.List;
+
+import com.revature.models.Mutation;
+
+public class MutationServiceImpl implements MutationService {
+
+	@Override
+	public List<Mutation> findMutationsByLevel(int level) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
