@@ -31,5 +31,10 @@ public class MutamonController {
 	public List<Monster> findAllMonsters() {
 		return ms.findAllMonsters();
 	}
+	
+	@GetMapping("/{id}")
+	public Monster findMonsterByUserId(@PathVariable int id) {
+		return ms.findMonsterByUserId(id);
+	}
 
 }

@@ -1,6 +1,7 @@
 package com.revature.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,6 +50,11 @@ public class MutamonServiceImpl implements MutamonService {
 			monster = this.mutamonStatsPopulation(monster);
 		}
 		return monsters;
+	}
+
+	@Override
+	public Monster findMonsterByUserId(int id) {
+		return md.getOne(id);
 	}
 	
 }
