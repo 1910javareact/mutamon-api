@@ -1,0 +1,230 @@
+package com.revature.models;
+
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Table(name = "monsters", schema = "mutamon")
+@Entity
+public class Monster {
+	@Id
+	@Column(name = "monster_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int monsterId;
+	
+	@Column(name = "user_id")
+	private int userId;
+	
+	@Column(name = "monster_level")
+	private int level;
+	
+	@Column(name = "monster_name")
+	private String name;
+	
+	@Column(name = "monster_wins")
+	private int wins;
+	
+	@Column(name = "is_current_monster")
+	private boolean isCurrent;
+	
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "monsters_mutations", schema = "mutamon",
+				joinColumns = @JoinColumn(name = "monster_id", referencedColumnName = "monster_id"),
+				inverseJoinColumns = @JoinColumn(name = "mutation_id", referencedColumnName = "mutation_id"))
+	private Set<Mutation> mutations;
+
+	@Transient
+	private int strength;
+	
+	@Transient
+	private int speed;
+	
+	@Transient
+	private int defence;
+
+	public Monster() {
+		super();
+		this.strength = level;
+		this.speed = level;
+		this.defence = level;
+		for(Mutation mut: mutations) {
+			this.strength += mut.getStrength();
+			this.speed += mut.getSpeed();
+			this.defence += mut.getDefence();
+		}
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getMonsterId() {
+		return monsterId;
+	}
+
+	public void setMonsterId(int monsterId) {
+		this.monsterId = monsterId;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getWins() {
+		return wins;
+	}
+
+	public void setWins(int wins) {
+		this.wins = wins;
+	}
+
+	public boolean isCurrent() {
+		return isCurrent;
+	}
+
+	public void setCurrent(boolean isCurrent) {
+		this.isCurrent = isCurrent;
+	}
+
+	public Set<Mutation> getMutations() {
+		return mutations;
+	}
+
+	public void setMutations(Set<Mutation> mutations) {
+		this.mutations = mutations;
+	}
+
+	public int getStrength() {
+		return strength;
+	}
+
+	public void setStrength(int strength) {
+		this.strength = strength;
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+
+	public int getDefence() {
+		return defence;
+	}
+
+	public void setDefence(int defence) {
+		this.defence = defence;
+	}
+
+	public Monster(int monsterId, int userId, int level, String name, int wins, boolean isCurrent,
+			Set<Mutation> mutations) {
+		super();
+		this.monsterId = monsterId;
+		this.userId = userId;
+		this.level = level;
+		this.name = name;
+		this.wins = wins;
+		this.isCurrent = isCurrent;
+		this.mutations = mutations;
+		this.strength = level;
+		this.speed = level;
+		this.defence = level;
+		for(Mutation mut: mutations) {
+			this.strength += mut.getStrength();
+			this.speed += mut.getSpeed();
+			this.defence += mut.getDefence();
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Monster [monsterId=" + monsterId + ", userId=" + userId + ", level=" + level + ", name=" + name
+				+ ", wins=" + wins + ", isCurrent=" + isCurrent + ", mutations=" + mutations + ", strength=" + strength
+				+ ", speed=" + speed + ", defence=" + defence + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + defence;
+		result = prime * result + (isCurrent ? 1231 : 1237);
+		result = prime * result + level;
+		result = prime * result + monsterId;
+		result = prime * result + ((mutations == null) ? 0 : mutations.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + speed;
+		result = prime * result + strength;
+		result = prime * result + userId;
+		result = prime * result + wins;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Monster other = (Monster) obj;
+		if (defence != other.defence)
+			return false;
+		if (isCurrent != other.isCurrent)
+			return false;
+		if (level != other.level)
+			return false;
+		if (monsterId != other.monsterId)
+			return false;
+		if (mutations == null) {
+			if (other.mutations != null)
+				return false;
+		} else if (!mutations.equals(other.mutations))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (speed != other.speed)
+			return false;
+		if (strength != other.strength)
+			return false;
+		if (userId != other.userId)
+			return false;
+		if (wins != other.wins)
+			return false;
+		return true;
+	}
+	
+}
