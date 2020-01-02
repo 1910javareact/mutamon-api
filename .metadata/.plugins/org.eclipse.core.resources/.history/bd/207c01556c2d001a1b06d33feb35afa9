@@ -25,10 +25,9 @@ public class MutamonServiceImpl implements MutamonService {
 		m.setDefence(m.getLevel());
 		for(Mutation mut: m.getMutations()) {
 			m.setStrength(m.getStrength()+mut.getStrength());
-			m.setSpeed(m.getSpeed()+mut.getSpeed());
+			m.setSpeed(m.getSpeed()+mut.getStrength());
 			m.setDefence(m.getDefence()+mut.getDefence());
 		}
-		
 		return m;
 	}
 	
@@ -44,11 +43,7 @@ public class MutamonServiceImpl implements MutamonService {
 	
 	@Override
 	public List<Monster> findAllMonsters() {
-		List<Monster> monsters = md.findAll();
-		for(Monster monster: monsters) {
-			monster = this.mutamonStatsPopulation(monster);
-		}
-		return monsters;
+		return md.findAll();
 	}
 	
 }

@@ -23,10 +23,15 @@ public class MutamonServiceImpl implements MutamonService {
 		m.setStrength(m.getLevel());
 		m.setSpeed(m.getLevel());
 		m.setDefence(m.getLevel());
+		System.out.println(m.getStrength());
 		for(Mutation mut: m.getMutations()) {
+			System.out.println(mut.getName());
+			System.out.println("Speed: " + mut.getSpeed() + ", Strength: " + mut.getStrength() + ", Defence: " + mut.getDefence());
+			System.out.println(m.getSpeed());
 			m.setStrength(m.getStrength()+mut.getStrength());
 			m.setSpeed(m.getSpeed()+mut.getSpeed());
 			m.setDefence(m.getDefence()+mut.getDefence());
+			System.out.println(m.getSpeed());
 		}
 		
 		return m;

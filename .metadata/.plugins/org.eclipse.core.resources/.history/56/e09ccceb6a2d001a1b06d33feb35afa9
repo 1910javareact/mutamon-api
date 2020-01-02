@@ -54,6 +54,14 @@ public class Monster {
 
 	public Monster() {
 		super();
+//		this.strength = this.level;
+//		this.speed = this.level;
+//		this.defence = this.level;
+//		for(Mutation mut: this.mutations) {
+//			this.strength += mut.getStrength();
+//			this.speed += mut.getSpeed();
+//			this.defence += mut.getDefence();
+//		}
 		// TODO Auto-generated constructor stub
 	}
 
