@@ -9,5 +9,7 @@ import com.revature.models.Monster;
 public interface MutamonDao extends JpaRepository<Monster, Integer>{
 
 	public List<Monster> findMonstersByUserIdAndLevel(int id, int level);
+	
+	public Monster findMonsterByUserId(int id);
 		
 }
