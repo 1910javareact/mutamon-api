@@ -18,6 +18,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User findUserByUsernameAndPassword(String username, String password) {
+		// TODO Auto-generated method stub
 		return ud.findUserByUsernameAndPassword(username, password);
 	}
 
