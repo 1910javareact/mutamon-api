@@ -1,0 +1,11 @@
+package com.revature.repositories;
+
+import java.util.List;
+
+import com.revature.models.Monster;
+
+public interface MutamonDao {
+
+	public List<Monster> findMonstersByUserIdAndLevel(int id, int level);
+	
+}

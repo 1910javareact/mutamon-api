@@ -1,0 +1,17 @@
+package com.revature.services;
+
+import java.util.List;
+
+import com.revature.models.Monster;
+
+public class MutationServiceImpl implements MutamonService {
+
+	private MutationDao md;
+	
+	@Override
+	public List<Monster> findByUserIdAndLevel(int id, int level) {
+		// TODO Auto-generated method stub
+		return md.findByUserIdAndLevel(id,level);
+	}
+
+}
