@@ -56,12 +56,5 @@ public class MutamonServiceImpl implements MutamonService {
 		monster = this.mutamonStatsPopulation(monster);
 		return monster;
 	}
-
-	@Override
-	public Monster save(Monster monster) {
-		Monster m = md.save(monster);
-		m = this.mutamonStatsPopulation(m);
-		return m;
-	}
 	
 }
