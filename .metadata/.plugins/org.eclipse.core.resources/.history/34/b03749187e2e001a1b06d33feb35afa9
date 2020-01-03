@@ -10,8 +10,8 @@ public interface MutamonService {
 	
 	public List<Monster> findAllMonsters();
 
-	public Monster save(Monster monster);
+	public Monster findMonsterByUserIdAndIsCurrent(int id, boolean isCurrent);
 
-	public Monster findMonsterByUserIdAndActiveMonster(int id, boolean b);
+	public Monster save(Monster monster);
 	
 }

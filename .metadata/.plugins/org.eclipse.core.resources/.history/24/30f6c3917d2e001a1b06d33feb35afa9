@@ -35,7 +35,7 @@ public class Monster {
 	private int wins;
 	
 	@Column(name = "is_current_monster")
-	private boolean activeMonster;
+	private boolean isCurrent;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "monsters_mutations", schema = "mutamon",
@@ -97,12 +97,12 @@ public class Monster {
 		this.wins = wins;
 	}
 
-	public boolean isActiveMonster() {
-		return activeMonster;
+	public boolean isCurrent() {
+		return isCurrent;
 	}
 
-	public void setActiveMonster(boolean activeMonster) {
-		this.activeMonster = activeMonster;
+	public void setCurrent(boolean isCurrent) {
+		this.isCurrent = isCurrent;
 	}
 
 	public Set<Mutation> getMutations() {
@@ -137,34 +137,39 @@ public class Monster {
 		this.defence = defence;
 	}
 
-	public Monster(int monsterId, int userId, int level, String name, int wins, boolean activeMonster,
-			Set<Mutation> mutations, int strength, int speed, int defence) {
+	public Monster(int monsterId, int userId, int level, String name, int wins, boolean isCurrent,
+			Set<Mutation> mutations) {
 		super();
 		this.monsterId = monsterId;
 		this.userId = userId;
 		this.level = level;
 		this.name = name;
 		this.wins = wins;
-		this.activeMonster = activeMonster;
+		this.isCurrent = isCurrent;
 		this.mutations = mutations;
-		this.strength = strength;
-		this.speed = speed;
-		this.defence = defence;
+		this.strength = level;
+		this.speed = level;
+		this.defence = level;
+		for(Mutation mut: mutations) {
+			this.strength += mut.getStrength();
+			this.speed += mut.getSpeed();
+			this.defence += mut.getDefence();
+		}
 	}
 
 	@Override
 	public String toString() {
 		return "Monster [monsterId=" + monsterId + ", userId=" + userId + ", level=" + level + ", name=" + name
-				+ ", wins=" + wins + ", activeMonster=" + activeMonster + ", mutations=" + mutations + ", strength="
-				+ strength + ", speed=" + speed + ", defence=" + defence + "]";
+				+ ", wins=" + wins + ", isCurrent=" + isCurrent + ", mutations=" + mutations + ", strength=" + strength
+				+ ", speed=" + speed + ", defence=" + defence + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (activeMonster ? 1231 : 1237);
 		result = prime * result + defence;
+		result = prime * result + (isCurrent ? 1231 : 1237);
 		result = prime * result + level;
 		result = prime * result + monsterId;
 		result = prime * result + ((mutations == null) ? 0 : mutations.hashCode());
@@ -185,9 +190,9 @@ public class Monster {
 		if (getClass() != obj.getClass())
 			return false;
 		Monster other = (Monster) obj;
-		if (activeMonster != other.activeMonster)
-			return false;
 		if (defence != other.defence)
+			return false;
+		if (isCurrent != other.isCurrent)
 			return false;
 		if (level != other.level)
 			return false;
@@ -213,4 +218,5 @@ public class Monster {
 			return false;
 		return true;
 	}
+	
 }

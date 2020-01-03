@@ -41,6 +41,7 @@ public class MutamonController {
 	
 	@PatchMapping
 	public Monster save(@RequestBody Monster monster) {
+		System.out.println(monster);
 		return ms.save(monster);
 	}
 

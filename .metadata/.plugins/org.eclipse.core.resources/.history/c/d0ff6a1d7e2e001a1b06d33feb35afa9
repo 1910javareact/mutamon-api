@@ -35,12 +35,13 @@ public class MutamonController {
 	}
 	
 	@GetMapping("/{id}")
-	public Monster findMonsterByUserIdAndActiveMonster(@PathVariable int id) {
-		return ms.findMonsterByUserIdAndActiveMonster(id, true);
+	public Monster findMonsterByUserIdAndIsCurrent(@PathVariable int id) {
+		return ms.findMonsterByUserIdAndIsCurrent(id, true);
 	}
 	
 	@PatchMapping
 	public Monster save(@RequestBody Monster monster) {
+		System.out.println(monster);
 		return ms.save(monster);
 	}
 

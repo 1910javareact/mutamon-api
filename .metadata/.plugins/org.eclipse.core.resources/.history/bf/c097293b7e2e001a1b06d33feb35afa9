@@ -10,6 +10,6 @@ public interface MutamonDao extends JpaRepository<Monster, Integer>{
 
 	public List<Monster> findMonstersByUserIdAndLevel(int id, int level);
 	
-	public Monster findMonsterByUserIdAndActiveMonster(int id, boolean isCurrent);
+	public Monster findMonsterByUserIdAndIsCurrent(int id, boolean isCurrent);
 		
 }
