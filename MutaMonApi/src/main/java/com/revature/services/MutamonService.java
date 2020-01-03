@@ -13,5 +13,7 @@ public interface MutamonService {
 	public Monster findMonsterByUserIdAndIsCurrent(int id, boolean isCurrent);
 
 	public Monster save(Monster monster);
+
+	public Monster findMonsterByLevel(int level);
 	
 }

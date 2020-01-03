@@ -63,5 +63,13 @@ public class MutamonServiceImpl implements MutamonService {
 		m = this.mutamonStatsPopulation(m);
 		return m;
 	}
+
+	@Override
+	public Monster findMonsterByLevel(int level) {
+		// TODO Auto-generated method stub
+		Monster monster = md.findMonsterByLevel(level);
+		monster = this.findMonsterByLevel(level);
+		return monster;
+	}
 	
 }
