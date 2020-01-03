@@ -41,12 +41,8 @@ public class MutamonController {
 	
 	@PatchMapping
 	public Monster save(@RequestBody Monster monster) {
+		System.out.println(monster);
 		return ms.save(monster);
-	}
-	
-	@GetMapping
-	public Monster findMonsterByLevel(@PathVariable int level) {
-		return ms.findMonsterByLevel(level);
 	}
 
 }

@@ -51,8 +51,8 @@ public class MutamonServiceImpl implements MutamonService {
 	}
 
 	@Override
-	public Monster findMonsterByUserIdAndActiveMonster(int id, boolean isCurrent) {
-		Monster monster = md.findMonsterByUserIdAndActiveMonster(id, isCurrent);
+	public Monster findMonsterByUserIdAndIsCurrent(int id, boolean isCurrent) {
+		Monster monster = md.findMonsterByUserIdAndIsCurrent(id, isCurrent);
 		monster = this.mutamonStatsPopulation(monster);
 		return monster;
 	}
@@ -62,14 +62,6 @@ public class MutamonServiceImpl implements MutamonService {
 		Monster m = md.save(monster);
 		m = this.mutamonStatsPopulation(m);
 		return m;
-	}
-
-	@Override
-	public Monster findMonsterByLevel(int level) {
-		// TODO Auto-generated method stub
-		Monster monster = md.findMonsterByLevel(level);
-		monster = this.findMonsterByLevel(level);
-		return monster;
 	}
 	
 }
