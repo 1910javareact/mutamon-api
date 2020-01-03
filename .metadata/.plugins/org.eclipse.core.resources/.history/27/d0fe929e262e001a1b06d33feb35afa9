@@ -12,7 +12,7 @@ import com.revature.models.Mutation;
 import com.revature.services.MutationService;
 
 @RestController
-@RequestMapping("mutations")
+@RequestMapping("mutation")
 public class MutationController {
 
 	private MutationService ms;
@@ -24,6 +24,7 @@ public class MutationController {
 	
 	@GetMapping("/{level}")
 	public List<Mutation> findMutationsByLevel(@PathVariable int level) {
+		System.out.println("getting the request");
 		return ms.findMutationsByLevel(level);
 	}
 }

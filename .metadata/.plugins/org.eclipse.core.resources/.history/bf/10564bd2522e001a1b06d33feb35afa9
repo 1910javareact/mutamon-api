@@ -21,9 +21,4 @@ public class UserServiceImpl implements UserService {
 		return ud.findUserByUsernameAndPassword(username, password);
 	}
 
-	@Override
-	public User save(User user) {
-		return ud.save(user);
-	}
-
 }
