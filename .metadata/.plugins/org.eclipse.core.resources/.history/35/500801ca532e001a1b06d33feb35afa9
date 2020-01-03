@@ -26,9 +26,8 @@ public class UserController {
 		return us.findUserByUsernameAndPassword(credentials.getUsername(), credentials.getPassword());
 	}
 	
-	@PostMapping
-	public User save(@RequestBody Credentials credentials) {
-		User user = new User(0, credentials.getUsername(),credentials.getPassword());
-		return us.save(user);
-	}
+//	@PostMapping("signup")
+//	public User save(@RequestBody Credentials credentials) {
+//		return us.save(credentials.getUsername(),credentials.getPassword());
+//	}
 }
