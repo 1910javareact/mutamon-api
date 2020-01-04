@@ -1,0 +1,21 @@
+package com.revature.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.revature.models.Monster;
+import com.revature.repositories.MutamonDao;
+
+@Service
+public class MutamonServiceImpl implements MutamonService {
+
+	private MutamonDao md;
+	
+	@Override
+	public List<Monster> findMonsterByUserIdAndLevel(int id, int level) {
+		// TODO Auto-generated method stub
+		return md.findMonsterByUserIdAndLevel(id,level);
+	}
+	
+}

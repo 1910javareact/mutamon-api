@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.revature.services.MutationServiceImpl&apos; to &apos;MutamonServiceImpl&apos;&#x0D;&#x0A;- Original project: &apos;MutaMonApi&apos;&#x0D;&#x0A;- Original element: &apos;com.revature.services.MutationServiceImpl&apos;&#x0D;&#x0A;- Renamed element: &apos;com.revature.services.MutamonServiceImpl&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MutationServiceImpl&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.revature.services{MutationServiceImpl.java[MutationServiceImpl" matchStrategy="1" name="MutamonServiceImpl" qualified="false" references="true" similarDeclarations="false" stamp="1577916683585" textual="false" version="1.0"/>
+</session>

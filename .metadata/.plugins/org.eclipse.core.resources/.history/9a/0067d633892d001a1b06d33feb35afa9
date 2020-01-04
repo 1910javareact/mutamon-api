@@ -1,0 +1,40 @@
+package com.revature.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.revature.models.Monster;
+import com.revature.services.MutamonService;
+
+@RestController
+@RequestMapping("mutamon")
+public class MutamonController {
+
+	private MutamonService ms;
+	
+	@Autowired
+	public MutamonController(MutamonService ms) {
+		this.ms = ms;
+	}
+	
+	@GetMapping("/hof/userid/{id}")
+	public List<Monster> findMonstersByUserIdAndLevel(@PathVariable int id) {
+		return ms.findMonstersByUserIdAndLevel(id, 9);
+	}
+	
+	@GetMapping
+	public List<Monster> findAllMonsters() {
+		return ms.findAllMonsters();
+	}
+	
+	@GetMapping("/{id}")
+	public Monster findMonsterByUserId(@PathVariable int id) {
+		return ms.findMonsterByUserId(id);
+	}
+
+}
