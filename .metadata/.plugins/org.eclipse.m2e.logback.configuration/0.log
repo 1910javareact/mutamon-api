@@ -832,3 +832,9 @@
 2020-01-03 22:02:47,833 [Worker-327: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Work\Desktop\Revature\Projects\mutamon-api\MutaMonApi\src\test\resources
 2020-01-03 23:15:54,999 [Worker-347: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-01-03 23:15:54,999 [Worker-347: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-01-03 23:15:55,000 [Worker-347: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-03 23:15:55,003 [Worker-347: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-03 23:15:55,004 [Worker-347: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Work\Desktop\Revature\Projects\mutamon-api\MutaMonApi\src\test\resources
+2020-01-04 18:27:32,532 [Worker-431: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-04 18:27:32,638 [Worker-431: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-01-04 18:27:32,647 [Worker-431: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
