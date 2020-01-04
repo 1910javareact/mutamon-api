@@ -44,8 +44,7 @@ public class MutamonController {
 		return ms.save(monster);
 	}
 	
-
-	@GetMapping("/opponent/{level}")
+	@GetMapping("opponent")
 	public Monster findMonsterByLevel(@PathVariable int level) {
 		return ms.findMonsterByLevel(level);
 	}
