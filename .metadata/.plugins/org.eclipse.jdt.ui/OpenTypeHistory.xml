@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=MutaMonApi/src\/main\/java&lt;com.revature.services{MutamonService.java[MutamonService" modifiers="513" timestamp="1577916378154"/>
+<typeInfo handle="=MutaMonApi/src\/main\/java&lt;com.revature.services{MutamonService.java[MutamonService" modifiers="513" timestamp="1578001716878"/>
+<typeInfo handle="=MutaMonApi/src\/main\/java&lt;com.revature.services{UserService.java[UserService" modifiers="513" timestamp="1577980750733"/>
+<typeInfo handle="=MutaMonApi/C:\/Users\/Work\/.m2\/repository\/org\/hibernate\/hibernate-core\/5.4.9.Final\/hibernate-core-5.4.9.Final.jar&lt;org.hibernate.metamodel.model.convert.spi(JpaAttributeConverter.class[JpaAttributeConverter" modifiers="1537" timestamp="1577458540838"/>
+<typeInfo handle="=MutaMonApi/src\/main\/java&lt;com.revature.services{MutationService.java[MutationService" modifiers="513" timestamp="1578004877282"/>
+<typeInfo handle="=MutaMonApi/C:\/Users\/Work\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.2.3.RELEASE\/spring-data-jpa-2.2.3.RELEASE.jar&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1577458548416"/>
+<typeInfo handle="=MutaMonApi/C:\/Users\/Work\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.2.3.RELEASE\/spring-data-jpa-2.2.3.RELEASE.jar&lt;org.springframework.data.jpa.mapping(JpaPersistentProperty.class[JpaPersistentProperty" modifiers="1537" timestamp="1577458548416"/>
 </typeInfoHistroy>
